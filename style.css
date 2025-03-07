@@ -252,7 +252,8 @@ a{
     flex-grow: 1;
     height: 40px;
 }
-.add-transaction-button:hover{
+.add-transaction-button:hover,
+.myaccount-edit-profile{
     color: #FF8C42;
     background-color: white;
     border: solid 2px #FF8C42;
@@ -445,7 +446,7 @@ a{
     .myaccount-account-savings-progress-group{
         display: none;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
     .myaccount-account-savings-progress-show{
         display: block;
