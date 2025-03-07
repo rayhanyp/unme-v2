@@ -28,19 +28,75 @@
                 <div class="myaccount-profile">
                     <img class="myaccount-photo-profile" src="img/photo-profile/default.png" alt="">
                     <div class="myaccount-username">Rayhan Yupila Putra</div>
+                    <button type="button" class="btn myaccount-edit-profile">Edit Profile</button>
                     <!-- <div class="myaccount-profile-action">
                         <button type="button" class="btn myaccount-profile-edit">
                             Edit
                         </button>
                         <button type="button" class="btn myaccount-profile-remove">Remove</button>
                     </div> -->
+                    <div class="myaccount-savings-allocations">
+                        <div class="myaccount-overall-savings">
+                            Overall Savings
+                            <div class="progress my-1" role="progressbar" style="height: 10px">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                            <div class="myaccount-overall-savings-value">IDR 2,000,000 / IDR 5,000,000</div>
+                        </div>
+                        <div id="progress-session" class="myaccount-account-savings-progress-group">
+                            Savings Progress
+                            <div class="myaccount-account-savings-progress">
+                                Engagement Rings
+                                <div class="progress my-1" role="progressbar" style="height: 10px">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <div class="myaccount-account-savings-value">IDR 500,000 / IDR 1,000,000</div>
+                            </div>
+                            <div class="myaccount-account-savings-progress">
+                                Engagement Rings
+                                <div class="progress my-1" role="progressbar" style="height: 10px">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <div class="myaccount-account-savings-value">IDR 500,000 / IDR 1,000,000</div>
+                            </div>
+                            <div class="myaccount-account-savings-progress">
+                                Engagement Rings
+                                <div class="progress my-1" role="progressbar" style="height: 10px">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <div class="myaccount-account-savings-value">IDR 500,000 / IDR 1,000,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="progress-show" class="myaccount-account-savings-progress-show" src="img/vector/arrow-down.svg" alt="">
                 </div>
-                <div class="myaccount-info">
-                    tes
+                <div class="myaccount-settings">
+                    <div class="dark-mode-setting">
+                        <img class="dark-mode-icon" src="img/vector/dark-mode.svg" alt="">
+                        Dark mode
+                        <div class="setting-switch form-check form-switch">
+                            <input class="switch-setting form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" disabled>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("progress-show").addEventListener("click", function(){
+            let progressSession = document.getElementById("progress-session");
+
+            if(window.matchMedia("(max-width: 768px)").matches){
+                if(getComputedStyle(progressSession).display === "none"){
+                    progressSession.style.display = "flex";
+                } else {
+                    progressSession.style.display = "none";
+                }
+
+                this.style.transform = this.style.transform === "scaleY(-1)"?"scaleY(1)":"scaleY(-1)";
+            }
+        })
+    </script>
   </body>
 </html>
