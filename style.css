@@ -253,7 +253,7 @@ a{
     height: 40px;
 }
 .add-transaction-button:hover,
-.myaccount-edit-profile{
+.myaccount-edit-profile:hover{
     color: #FF8C42;
     background-color: white;
     border: solid 2px #FF8C42;
