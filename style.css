@@ -28,8 +28,17 @@ body {
     color: var(--primary-text-color);
     transition: color 0.2s, background-color 0.2s;
 }
-body::before{
-    
+@keyframes gradientFade {
+    0% {
+        background: radial-gradient(circle closest-corner at 70% 40%, #ffe9db 0%, #f3f3f3 100%);
+    }
+    100% {
+        background: radial-gradient(circle closest-corner at 70% 40%, #4a3f35 0%, #1a1a1a 100%);
+    }
+}
+
+body.dark-mode {
+    animation: gradientFade 0.2s ease-in-out forwards;
 }
 a{
     text-decoration: none;
