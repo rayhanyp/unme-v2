@@ -9,7 +9,7 @@
     --shadow-color: lightblue;
 }
 .html-darkmode{
-    --background: radial-gradient(circle closest-corner at 70% 40%, #4a3f35 0%, #1e1e1e 100%);
+    --background: radial-gradient(circle closest-corner at 70% 40%, #4a3f35 0%, #2a2a2a 100%);
     --primary-color: #0e0e0e;
     --secondary-color: #1a1a1a;
     --accent-color: #d97b48;
