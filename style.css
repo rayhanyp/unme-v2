@@ -1,5 +1,5 @@
 :root{
-    --background: radial-gradient(circle closest-corner at 70% 40%, #ffe9db 0%, #f3f3f3 100%);
+    --background: radial-gradient(circle closest-corner at 30% 40%, #ffe9db 0%, #f3f3f3 100%);
     --primary-color: #ffffff;
     --secondary-color: #f5f5f5;
     --accent-color: #ff8c42;
@@ -9,7 +9,7 @@
     --shadow-color: lightblue;
 }
 .html-darkmode{
-    --background: radial-gradient(circle closest-corner at 70% 40%, #4a3f35 0%, #2a2a2a 100%);
+    --background: radial-gradient(circle closest-corner at 30% 40%, #4a3f35 0%, #2a2a2a 100%);
     --primary-color: #0e0e0e;
     --secondary-color: #1a1a1a;
     --accent-color: #d97b48;
@@ -27,6 +27,9 @@ body {
     height: 100vh;
     color: var(--primary-text-color);
     transition: color 0.2s, background-color 0.2s;
+}
+body::before{
+    
 }
 a{
     text-decoration: none;
