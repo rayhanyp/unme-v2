@@ -30,10 +30,10 @@ body {
 }
 @keyframes gradientFade {
     0% {
-        background: radial-gradient(circle closest-corner at 70% 40%, #ffe9db 0%, #f3f3f3 100%);
+        background: radial-gradient(circle closest-corner at 30% 40%, #ffe9db 0%, #f3f3f3 100%);
     }
     100% {
-        background: radial-gradient(circle closest-corner at 70% 40%, #4a3f35 0%, #1a1a1a 100%);
+        background: radial-gradient(circle closest-corner at 30% 40%, #4a3f35 0%, #1a1a1a 100%);
     }
 }
 
