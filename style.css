@@ -1,5 +1,5 @@
 :root{
-    --background: radial-gradient(circle closest-corner at 30% 30%, #ffe9db 0%, #f3f3f3 80%);
+    --background: radial-gradient(circle closest-corner at 30% 40%, #ffe9db 0%, #f3f3f3 100%);
     --primary-color: #ffffff;
     --secondary-color: #f5f5f5;
     --accent-color: #ff8c42;
@@ -7,16 +7,30 @@
     --secondary-text-color: #aaaaaa;
     --red-color: #ff0000;
     --shadow-color: lightblue;
+
+    --target-bgcolor: rgb(194, 240, 255);
+    --target-color: rgba(0, 191, 255, 0.671);
+    --savings-bgcolor: rgb(194, 255, 210);
+    --savings-color: rgba(26, 183, 34, 0.671);
+    --profile-bgcolor: rgb(255, 251, 194);
+    --profile-color: rgba(222, 187, 11, 0.795);
 }
 .html-darkmode{
-    --background: radial-gradient(circle closest-corner at 30% 30%, #4a3f35 0%, #161616 80%);
-    --primary-color: #0a0a0a;
-    --secondary-color: #141414;
+    --background: radial-gradient(circle closest-corner at 30% 30%, #4a3f35 0%, #212121 60%);
+    --primary-color: #171717;
+    --secondary-color: #262626;
     --accent-color: #d97b48;
     --primary-text-color: #ffffff;
     --secondary-text-color: #888888;
     --red-color: #E04848;
     --shadow-color: rgba(0, 102, 204, 0.3);
+
+    --target-bgcolor: rgb(20, 70, 90);
+    --target-color: rgba(0, 150, 200, 0.8);
+    --savings-bgcolor: rgb(20, 90, 50);
+    --savings-color: rgba(40, 200, 50, 0.8);
+    --profile-bgcolor: rgb(90, 80, 30);
+    --profile-color: rgba(200, 160, 10, 0.8);
 }
 
 body {
@@ -26,7 +40,7 @@ body {
     background-attachment: fixed;
     height: 100vh;
     color: var(--primary-text-color);
-    transition: color 0.2s, background-color 0.2s;
+    transition: color 0.2s;
 }
 a{
     text-decoration: none;
@@ -172,8 +186,9 @@ a{
     background-color: var(--primary-color);
     padding: 20px;
     border-radius: 32px;
-    width: 30vw;
+    min-width: 25vw;
     scroll-snap-align: center;
+    cursor: pointer;
 }
 .saving-account:first-child{
     scroll-snap-align: start;
@@ -193,6 +208,7 @@ a{
     padding-inline: 16px;
     height: 32px;
     color: var(--primary-text-color);
+    pointer-events: auto;
 }
 .dropdown-item{
     font-size: 12px;
@@ -220,6 +236,7 @@ a{
     align-items: center;
     margin-left: auto;
     padding: 0px;
+    pointer-events: auto;
 }
 .show-icon, .hide-icon{
     width: 60%;
@@ -367,13 +384,15 @@ a{
     margin-left: auto;
 }
 .myaccount-header,
-.edit-profile-header{
+.edit-profile-header,
+.notification-header{
     display: flex;
     gap: 16px;
     align-items: center;
 }
 .myaccount-title,
-.edit-profile-title{
+.edit-profile-title,
+.notification-title{
     font-size: 24px;
     font-weight: 700;
     color: var(--primary-text-color);
@@ -643,12 +662,85 @@ a{
     color: var(--accent-color);
     border: solid 2px var(--accent-color);
 }
+.notification-content{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.notification-group{
+    background-color: var(--primary-color);
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+    padding: 32px;
+    align-items: start;
+    
+}
+.notification-category-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.target-changed{
+    background-color: var(--target-bgcolor);
+}
+.savings-add{
+    background-color: var(--savings-bgcolor);
+}
+.user-changed{
+    background-color: var(--profile-bgcolor);
+}
+.target-icon{
+    width: 60%;
+    color: var(--target-color);
+}
+.money-icon{
+    width: 70%;
+    color: var(--savings-color);
+}
+.user-icon{
+    width: 60%;
+    color: var(--profile-color);
+}
+.notification-description{
+    font-size: 12px;
+    display: grid;
+    grid-template-areas:
+    "desc-name desc-date"
+    "desc-details desc-details";
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 6px;
+    
+}
+.notification-description-name{
+    font-weight: 600;
+    grid-area: desc-name;
+    width: max-content;
+}
+.notification-date{
+    grid-area: desc-date;
+    margin-left: auto;
+    width: max-content;
+    font-style: italic;
+    color: var(--secondary-text-color);
+    font-size: 10px;
+}
+.notification-description-details{
+    color: var(--secondary-text-color);
+    grid-area: desc-details;
+}
 
 /* Mobile CSS */
 
 @media screen and (max-width: 768px){
     .saving-account{
-        width: 90vw;
+        min-width: 80vw;
     }
     .saving-account-name{
         max-width: 120px;

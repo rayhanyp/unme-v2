@@ -7,15 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.add("html-darkmode");
     }
 
-    // Event listener untuk tombol toggle
-    toggleButton.addEventListener("click", function () {
-        body.classList.toggle("html-darkmode");
+    if(toggleButton){
 
-        // Simpan preferensi pengguna di localStorage
-        if (body.classList.contains("html-darkmode")) {
-            localStorage.setItem("theme", "dark");
-        } else {
-            localStorage.setItem("theme", "light");
-        }
-    });
+        // Event listener untuk tombol toggle
+        toggleButton.addEventListener("click", function () {
+            body.classList.toggle("html-darkmode");
+            
+            // Simpan preferensi pengguna di localStorage
+            if (body.classList.contains("html-darkmode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
 });
